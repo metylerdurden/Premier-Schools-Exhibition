@@ -41,16 +41,35 @@
 }
 
 /* Event Badge with Double-Border Effect */
+/* A short vertical ticker: the same venue/date row repeats several times
+   so the loop is seamless, auto-scrolling upward via JS (hero-ticker.js). */
 .hero__event-card {
   margin-top: 1.5rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 1.25rem;
+  width: fit-content;
+  max-height: 172px;
+  overflow: hidden;
   background: #E9CD96;
   color: #170940;
-  border-radius: 9999px;
-  padding: 0.75rem 1.8rem;
+  border-radius: 20px;
   box-shadow: 0 0 0 3px rgba(233, 205, 150, 0.35);
+}
+
+.hero__event-track {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero__event-row {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 0.75rem 1.8rem;
+}
+
+.hero__event-row-divider {
+  height: 1px;
+  margin: 0 1.8rem;
+  background: rgba(23, 9, 64, 0.15);
 }
 
 .hero__event-item {
@@ -1167,7 +1186,7 @@
     font-size: 2.1rem;
   }
 
-  .hero__event-card {
+  .hero__event-row {
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.75rem;
