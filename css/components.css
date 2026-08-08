@@ -491,9 +491,9 @@
   background: linear-gradient(
     to top,
     #0a0814 0%,
-    #0a0814 42%,
-    rgba(10, 8, 20, 0.55) 62%,
-    transparent 82%
+    #0a0814 36%,
+    rgba(10, 8, 20, 0.5) 54%,
+    transparent 72%
   );
 }
 
