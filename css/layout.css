@@ -26,11 +26,6 @@ select {
   z-index: 100;
   height: 70px;
   background: #ffffff;
-  transition: background-color 0.25s ease;
-}
-
-.header--scrolled {
-  background: linear-gradient(90deg, #241154 0%, #4B2E83 100%);
 }
 
 .header__container {
@@ -54,24 +49,15 @@ select {
   z-index: 10;
 }
 
-/* Top Right Register CTA — two-tone button (dark icon square leading,
-   all-caps label) by default; simplifies to a plain white pill with the
-   arrow trailing the text once the header is scrolled. */
+/* Top Right Register CTA */
 .header__cta {
   display: flex;
-  align-items: center;
-  background: #ffffff;
   border: 1.5px solid #170940;
   border-radius: 10px;
   overflow: hidden;
 }
 
-.header--scrolled .header__cta {
-  border: none;
-}
-
 .header__cta-icon {
-  order: 1;
   background: linear-gradient(135deg, #170940 0%, #3B1C78 100%);
   color: #ffffff;
   width: 48px;
@@ -80,19 +66,10 @@ select {
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  transition: background-color 0.2s ease, width 0.2s ease, color 0.2s ease;
-}
-
-.header--scrolled .header__cta-icon {
-  order: 2;
-  background: transparent;
-  color: #170940;
-  width: 30px;
 }
 
 .header__cta-btn {
-  order: 2;
-  background: transparent;
+  background: #ffffff;
   color: #170940;
   padding: 0 1.5rem;
   display: flex;
@@ -100,16 +77,8 @@ select {
   height: 48px;
   font-weight: 800;
   font-size: 0.85rem;
-  text-transform: uppercase;
   letter-spacing: 0.05em;
   text-decoration: none;
-  transition: letter-spacing 0.2s ease;
-}
-
-.header--scrolled .header__cta-btn {
-  order: 1;
-  text-transform: none;
-  letter-spacing: normal;
 }
 
 /* --- Accessibility Utilities --- */
