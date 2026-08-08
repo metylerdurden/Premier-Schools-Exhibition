@@ -27,4 +27,14 @@ document.addEventListener("DOMContentLoaded", () => {
   strip.addEventListener("pointerup", endDrag);
   strip.addEventListener("pointercancel", endDrag);
   strip.addEventListener("pointerleave", endDrag);
+
+  strip.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight") {
+      e.preventDefault();
+      strip.scrollBy({ left: 300, behavior: "smooth" });
+    } else if (e.key === "ArrowLeft") {
+      e.preventDefault();
+      strip.scrollBy({ left: -300, behavior: "smooth" });
+    }
+  });
 });

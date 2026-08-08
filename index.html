@@ -214,6 +214,8 @@
   <!-- Other Attractions for Parents & Kids -->
   <section class="attractions">
    <div class="attractions__inner">
+    <h2 class="attractions__heading">Other Attractions for Parents &amp; Kids</h2>
+
     <div class="attractions__collage" aria-hidden="true">
       <div class="attractions__diamond attractions__diamond--top">
         <img src="assets/images/premier-kidz-awards-1.jpg" alt="">
@@ -232,8 +234,6 @@
     <img class="attractions__badge" src="assets/logos/premier-kidz-awards.png" alt="Premier Kidz Awards">
 
     <div class="attractions__content">
-      <h2 class="attractions__heading">Other Attractions for Parents &amp; Kids</h2>
-
       <div class="attractions__tabs" role="tablist" aria-label="Other attractions">
         <button type="button" class="attractions__tab attractions__tab--active" id="tabKidzAwards" role="tab" aria-selected="true" aria-controls="panelKidzAwards">Premier Kidz Awards</button>
         <button type="button" class="attractions__tab" id="tabParentExchange" role="tab" aria-selected="false" aria-controls="panelParentExchange">The Parent Exchange</button>
@@ -369,7 +369,7 @@
     </svg>
     <h2 class="gallery__heading">Gallery</h2>
     <div class="gallery__viewport">
-      <div class="gallery__strip" id="galleryStrip">
+      <div class="gallery__strip" id="galleryStrip" role="region" aria-label="Exhibition photo gallery, drag or use arrow keys to see more" tabindex="0">
         <figure class="gallery__item"><img src="assets/images/gallery-pic-1.jpg" alt="Exhibition moment 1" loading="lazy" draggable="false"></figure>
         <figure class="gallery__item"><img src="assets/images/gallery-pic-2.jpg" alt="Exhibition moment 2" loading="lazy" draggable="false"></figure>
         <figure class="gallery__item"><img src="assets/images/gallery-pic-3.jpg" alt="Exhibition moment 3" loading="lazy" draggable="false"></figure>
@@ -388,31 +388,31 @@
       <img class="footer__logo" src="assets/logos/logo.png" alt="Premier Schools Exhibition">
 
       <div class="footer__col">
-        <h4>
+        <h3>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.5-7-11a7 7 0 1 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
           Corporate Office:
-        </h4>
+        </h3>
         <p>Suite B-5, Ballygunge Park Tower,<br>67B Ballygunge Circular Road,<br>Kolkata - 700019</p>
       </div>
 
       <div class="footer__col">
-        <h4>
+        <h3>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.5-7-11a7 7 0 1 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
           Ahmedabad Office:
-        </h4>
+        </h3>
         <p>12/AA, Swastik Chambers, Near CU Shah<br>College, Ashram Road,<br>Ahmedabad - 380009</p>
       </div>
 
       <div class="footer__col">
-        <h4>
+        <h3>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           Call us on
-        </h4>
+        </h3>
         <p>9674805912<br>9674585012</p>
       </div>
 
       <div class="footer__col">
-        <h4>Follow us on</h4>
+        <h3>Follow us on</h3>
         <div class="footer__socials">
           <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
           <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 2h-2a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>

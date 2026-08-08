@@ -63,7 +63,7 @@
   font-size: 0.95rem;
   font-weight: 800;
   white-space: nowrap;
-  color: #7C5CAE;
+  color: #634A8B;
 }
 
 .hero__event-item span {
@@ -596,20 +596,35 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: 490px 275px 1fr;
+  grid-template-areas: "collage badge heading" "collage badge content";
   align-items: center;
   gap: 1.5rem;
 }
 
+.attractions__heading {
+  grid-area: heading;
+  align-self: end;
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: #1B2A6B;
+  margin-bottom: 1.75rem;
+}
+
 .attractions__collage {
+  grid-area: collage;
   position: relative;
-  width: 490px;
-  height: 490px;
+  --collage-size: 490px;
+  --diamond-size: 155px;
+  --diamond-offset: 38px;
+  width: var(--collage-size);
+  height: var(--collage-size);
+  margin: 0 auto;
 }
 
 .attractions__diamond {
   position: absolute;
-  width: 155px;
-  height: 155px;
+  width: var(--diamond-size);
+  height: var(--diamond-size);
   border-radius: 14px;
   overflow: hidden;
   transform: rotate(45deg);
@@ -626,40 +641,38 @@
   transform: translate(-50%, -50%) rotate(-45deg);
 }
 
-/* Diamonds meet only at their corners around a shared center point (245,245),
-   each offset 130px from center, leaving a small gap — not overlapping. */
+/* Diamonds meet only at their corners around the shared collage center,
+   each offset from center by the same amount, leaving a small gap — not overlapping. */
 .attractions__diamond--top {
-  top: 38px;
-  left: 168px;
+  top: var(--diamond-offset);
+  left: calc((var(--collage-size) - var(--diamond-size)) / 2);
 }
 
 .attractions__diamond--left {
-  top: 168px;
-  left: 38px;
+  top: calc((var(--collage-size) - var(--diamond-size)) / 2);
+  left: var(--diamond-offset);
 }
 
 .attractions__diamond--right {
-  top: 168px;
-  left: 298px;
+  top: calc((var(--collage-size) - var(--diamond-size)) / 2);
+  left: calc(var(--collage-size) - var(--diamond-size) - var(--diamond-offset));
 }
 
 .attractions__diamond--bottom {
-  top: 298px;
-  left: 168px;
+  top: calc(var(--collage-size) - var(--diamond-size) - var(--diamond-offset));
+  left: calc((var(--collage-size) - var(--diamond-size)) / 2);
 }
 
 .attractions__badge {
+  grid-area: badge;
   width: 100%;
   max-width: 230px;
   height: auto;
   justify-self: center;
 }
 
-.attractions__heading {
-  font-size: 1.9rem;
-  font-weight: 800;
-  color: #1B2A6B;
-  margin-bottom: 1.75rem;
+.attractions__content {
+  grid-area: content;
 }
 
 .attractions__tabs {
@@ -1001,7 +1014,7 @@
   height: auto;
 }
 
-.footer__col h4 {
+.footer__col h3 {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -1053,7 +1066,7 @@
   }
 
   .hero__content {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     justify-items: center;
     text-align: center;
     max-width: 560px;
@@ -1083,7 +1096,7 @@
   }
 
   .appointments__content {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .appointments__image {
@@ -1093,6 +1106,42 @@
 
   .appointments__text {
     text-align: center;
+  }
+
+  .attractions__inner {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "heading" "badge" "collage" "content";
+    text-align: center;
+    justify-items: center;
+  }
+
+  .attractions__heading {
+    align-self: auto;
+    margin-bottom: 1.25rem;
+  }
+
+  .attractions__collage {
+    --collage-size: clamp(220px, 76vw, 300px);
+    --diamond-size: calc(var(--collage-size) * 0.317);
+    --diamond-offset: calc(var(--collage-size) * 0.077);
+    margin-bottom: 1.5rem;
+  }
+
+  .attractions__badge {
+    max-width: 160px;
+    margin-bottom: 1.5rem;
+  }
+
+  .attractions__tabs {
+    justify-content: center;
+  }
+
+  .attractions__panel-text {
+    margin-inline: auto;
+  }
+
+  .attractions__cta {
+    margin-inline: auto;
   }
 
   .footer__container {
@@ -1108,6 +1157,10 @@
 @media (max-width: 640px) {
   .hero {
     padding: 2rem 0 2.5rem;
+  }
+
+  .event-video__frame {
+    aspect-ratio: 16 / 9;
   }
 
   .hero__title {
@@ -1174,7 +1227,7 @@
   }
 
   .footer__container {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     text-align: center;
   }
 
@@ -1182,7 +1235,7 @@
     margin: 0 auto;
   }
 
-  .footer__col h4 {
+  .footer__col h3 {
     justify-content: center;
   }
 
