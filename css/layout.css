@@ -25,12 +25,12 @@ select {
   top: 0;
   z-index: 100;
   height: 70px;
-  background: linear-gradient(90deg, #241154 0%, #4B2E83 100%);
+  background: #ffffff;
   transition: background-color 0.25s ease;
 }
 
 .header--scrolled {
-  background: #ffffff;
+  background: linear-gradient(90deg, #241154 0%, #4B2E83 100%);
 }
 
 .header__container {
@@ -54,27 +54,27 @@ select {
   z-index: 10;
 }
 
-/* Top Right Register CTA — plain white pill with the arrow trailing the
-   text until the header is scrolled, then it becomes the two-tone button
-   (dark icon square leading, all-caps label) matching the reference site. */
+/* Top Right Register CTA — two-tone button (dark icon square leading,
+   all-caps label) by default; simplifies to a plain white pill with the
+   arrow trailing the text once the header is scrolled. */
 .header__cta {
   display: flex;
   align-items: center;
   background: #ffffff;
-  border: none;
+  border: 1.5px solid #170940;
   border-radius: 10px;
   overflow: hidden;
 }
 
 .header--scrolled .header__cta {
-  border: 1.5px solid #170940;
+  border: none;
 }
 
 .header__cta-icon {
-  order: 2;
-  background: transparent;
-  color: #170940;
-  width: 30px;
+  order: 1;
+  background: linear-gradient(135deg, #170940 0%, #3B1C78 100%);
+  color: #ffffff;
+  width: 48px;
   height: 48px;
   display: flex;
   align-items: center;
@@ -84,14 +84,14 @@ select {
 }
 
 .header--scrolled .header__cta-icon {
-  order: 1;
-  background: linear-gradient(135deg, #170940 0%, #3B1C78 100%);
-  color: #ffffff;
-  width: 48px;
+  order: 2;
+  background: transparent;
+  color: #170940;
+  width: 30px;
 }
 
 .header__cta-btn {
-  order: 1;
+  order: 2;
   background: transparent;
   color: #170940;
   padding: 0 1.5rem;
@@ -100,16 +100,16 @@ select {
   height: 48px;
   font-weight: 800;
   font-size: 0.85rem;
-  text-transform: none;
-  letter-spacing: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   text-decoration: none;
   transition: letter-spacing 0.2s ease;
 }
 
 .header--scrolled .header__cta-btn {
-  order: 2;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  order: 1;
+  text-transform: none;
+  letter-spacing: normal;
 }
 
 /* --- Accessibility Utilities --- */
