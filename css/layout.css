@@ -26,6 +26,11 @@ select {
   z-index: 100;
   height: 70px;
   background: #ffffff;
+  transition: background 0.3s ease;
+}
+
+.header--scrolled {
+  background: linear-gradient(135deg, #170940 0%, #3B1C78 100%);
 }
 
 .header__container {
@@ -55,6 +60,7 @@ select {
   border: 1.5px solid #170940;
   border-radius: 10px;
   overflow: hidden;
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .header__cta-icon {
@@ -66,6 +72,7 @@ select {
   align-items: center;
   justify-content: center;
   font-weight: bold;
+  transition: background 0.3s ease, color 0.3s ease, width 0.3s ease;
 }
 
 .header__cta-btn {
@@ -79,6 +86,30 @@ select {
   font-size: 0.85rem;
   letter-spacing: 0.05em;
   text-decoration: none;
+  text-transform: uppercase;
+  transition: background 0.3s ease, color 0.3s ease, padding 0.3s ease;
+}
+
+/* Scrolled state: single white pill, arrow after text, mixed-case label */
+.header--scrolled .header__cta {
+  border-color: transparent;
+  border-radius: 9999px;
+  background: #ffffff;
+}
+
+.header--scrolled .header__cta-icon {
+  order: 2;
+  background: transparent;
+  color: #170940;
+  width: 36px;
+}
+
+.header--scrolled .header__cta-btn {
+  order: 1;
+  background: transparent;
+  color: #170940;
+  text-transform: none;
+  padding: 0 0 0 1.75rem;
 }
 
 /* --- Accessibility Utilities --- */
