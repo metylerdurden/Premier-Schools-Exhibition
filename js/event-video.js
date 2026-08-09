@@ -20,4 +20,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   syncButton();
+
+  // Safari/WebKit doesn't always honor the declarative autoplay attribute. Calling
+  // play() before the video has buffered enough gets rejected and is never retried
+  // automatically, so try immediately and again once it's actually ready to play.
+  video.play().catch(() => {});
+  video.addEventListener("loadeddata", () => video.play().catch(() => {}));
 });
