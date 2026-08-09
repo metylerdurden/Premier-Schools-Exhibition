@@ -52,6 +52,12 @@ select {
   width: 150px;
   height: auto;
   z-index: 10;
+  transition: width 0.3s ease, top 0.3s ease;
+}
+
+.header--scrolled .logo-badge {
+  top: 12px;
+  width: 100px;
 }
 
 /* Top Right Register CTA */
@@ -158,6 +164,10 @@ select {
   .logo-badge {
     position: static;
     width: 110px;
+  }
+
+  .header--scrolled .logo-badge {
+    width: 90px;
   }
 
   .header__cta {
